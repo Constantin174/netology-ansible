@@ -208,7 +208,7 @@ ubuntu                     : ok=3    changed=0    unreachable=0    failed=0    s
 
 11) Запустите playbook на окружении prod.yml. При запуске ansible должен запросить у вас пароль. Убедитесь что факты some_fact для каждого из хостов определены из верных group_vars.
 <br/>
-Запустил при помощи ansible-playbook -i inventory/prod.yml site.yml --ask-vault-pass. some_fact получил из all.
+Запустил при помощи ansible-playbook -i inventory/prod.yml site.yml --ask-vault-pass. some_fact для local получил из all.
 ```commandline
 vagrant@server1:~/netology_ansible/08-ansible-01-base$ ansible-playbook -i inventory/prod.yml site.yml --ask-vault-pass
 Vault password: 
