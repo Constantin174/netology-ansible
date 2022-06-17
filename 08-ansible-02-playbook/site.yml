@@ -14,13 +14,13 @@
       until: download_java_binaries is succeeded
       tags: java
     - name: Ensure installation dir exists
-      become: true
+      #become: true
       file:
         state: directory
         path: "{{ java_home }}"
       tags: java
     - name: Extract java in the installation directory
-      become: true
+      #become: true
       unarchive:
         copy: false
         src: "/tmp/jdk-{{ java_jdk_version }}.tar.gz"
@@ -30,7 +30,7 @@
       tags:
         - java
     - name: Export environment variables
-      become: true
+      #become: true
       template:
         src: jdk.sh.j2
         dest: /etc/profile.d/jdk.sh
@@ -55,7 +55,7 @@
         path: "{{ elastic_home }}"
       tags: elastic
     - name: Extract Elasticsearch in the installation directory
-      become: true
+      #become: true
       unarchive:
         copy: false
         src: "/tmp/elasticsearch-{{ elastic_version }}-linux-x86_64.tar.gz"
@@ -65,7 +65,7 @@
       tags:
         - elastic
     - name: Set environment Elastic
-      become: true
+      #become: true
       template:
         src: templates/elk.sh.j2
         dest: /etc/profile.d/elk.sh
@@ -90,7 +90,7 @@
         path: "{{ kibana_home }}"
       tags: kibana
     - name: Extract Kibana in the installation directory
-      become: true
+      #become: true
       unarchive:
         copy: false
         src: "/tmp/kibana-{{ kibana_version }}-linux-x86_64.tar.gz"
@@ -100,7 +100,7 @@
       tags:
         - kibana
     - name: Set environment for Kibana
-      become: true
+      #become: true
       template:
         src: templates/elk.sh.j2
         dest: /etc/profile.d/kibana.sh
