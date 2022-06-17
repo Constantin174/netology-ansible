@@ -1,3 +1,3 @@
 ---
 kibana_version: "8.2.3"
-elastic_home: "/opt/kibana/kibana-{{ kibana_version }}"
+kibana_home: "/opt/kibana/kibana-{{ kibana_version }}"
