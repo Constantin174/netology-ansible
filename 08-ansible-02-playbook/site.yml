@@ -13,11 +13,6 @@
       register: download_java_binaries
       until: download_java_binaries is succeeded
       tags: java
-    - name: Create directrory for Java
-      file:
-        state: directory
-        path: "{{ java_home }}"
-      tags: java
     - name: Ensure installation dir exists
       #become: true
       file:
